@@ -195,3 +195,4 @@ WixTools/
 
 # Glassbench results
 /glassbench*.db
+.DS_Store

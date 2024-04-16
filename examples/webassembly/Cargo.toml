@@ -1,15 +1,19 @@
 [package]
-publish = false
-name = "example-webassembly"
-version = "0.0.0"
+# publish = false
+# name = "example_webassembly"
+name = "example_webassembly42"
+# name = "ortwasm"
+version = "0.1.0"
 edition = "2021"
 
 [lib]
-name = "ortwasm"
+# name = "example_webassembly"
+# name = "ortwasm"
 crate-type = ["cdylib"]
 
 [dependencies]
-ort = { path = "../../" }
+# ort = { path = "../../" }
+ort = { git = "https://github.com/pykeio/ort.git", branch = "wasm32-unknown-unknown" } # for usage with wasm-bindgen
 ndarray = "0.15"
 wasm-bindgen = "0.2.92"
 web-sys = "0.3"
@@ -23,3 +27,6 @@ console_error_panic_hook = "0.1"
 
 [features]
 load-dynamic = [ "ort/load-dynamic" ]
+
+# [profile.release]
+# lto = true
